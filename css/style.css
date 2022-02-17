@@ -1,6 +1,7 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+/* notify class  */
 .notify {
   color: #fff;
   text-align: center;
@@ -11,6 +12,7 @@ body {
   padding: 5px 20px;
   display: none;
 }
+/* notify section  */
 .notify-section {
   width: 100%;
   margin: 0 auto;
