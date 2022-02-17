@@ -1,6 +1,6 @@
 // get input value
 function getInputValue(id) {
-  const resultText = document.getElementById("id").value;
+  const resultText = document.getElementById(id).value;
   const result = parseInt(resultText);
   return result;
 }
