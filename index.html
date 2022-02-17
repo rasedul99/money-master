@@ -4,96 +4,137 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap cdn added -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <!-- google fonts -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Salary managment</title>
   </head>
   <body>
-    <div class="container-sm">
+    <div class="container">
       <header class="mt-3">
         <h2 class="text-center">Salary Managment</h2>
       </header>
       <main>
         <section>
-          <div class="row mt-4">
-            <div class="col-6">
-              <img src="./img/main.jpg" class="img-fluid" alt="main-img" />
+          <div class="row gx-5 mt-4">
+            <div class="col-md-7 col-sm-12">
+              <img
+                src="./img/main.jpg"
+                class="img-fluid h-100"
+                alt="main-img"
+              />
             </div>
-            <div class="col-1"></div>
-            <div class="col-5">
+            <div class="col-md-5 col-sm-12 bg-light">
+              <h3 class="mb-2 text-center">Income</h3>
+              <!-- error  -->
+              <div class="notify-section mb-3">
+                <p id="negative-value" class="notify">
+                  ❌ Negative value found, Please try again
+                </p>
+                <p id="not-number" class="notify">
+                  ❌ we acceept only number , Please try again
+                </p>
+                <p id="saving-more-than-balance" class="notify">
+                  ❌ sorry sir, your saving is more than your balance
+                </p>
+                <p id="expense-more-than-income" class="notify">
+                  ❌ sorry sir, your expense is more than your income
+                </p>
+              </div>
+              <!-- calculation area -->
               <div class="calculation-area text-center">
-                <h3>Income</h3>
-                <div class="row g-3 align-items-center justify-content-center">
-                  <div class="col-auto">
-                    <label class="col-form-label">Income:</label>
-                  </div>
-                  <div class="col-auto">
-                    <input type="text" id="income-input" class="form-control" />
-                  </div>
+                <div class="input-group mb-3">
+                  <label class="fs-4"> income :</label>
+                  <input
+                    type="text"
+                    id="income-input"
+                    class="form-control ms-2"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                  />
                 </div>
 
                 <h3>Expenses</h3>
-                <div class="row g-3 align-items-center justify-content-center">
-                  <div class="col-auto">
-                    <label class="col-form-label">Food:</label>
-                  </div>
-                  <div class="col-auto">
-                    <input type="text" id="food-cost" class="form-control" />
-                  </div>
+
+                <div class="input-group mb-3">
+                  <label class="fs-4">Food : </label>
+                  <input
+                    type="text"
+                    id="food-cost"
+                    class="form-control ms-2"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                  />
                 </div>
 
-                <div class="row g-3 align-items-center justify-content-center">
-                  <div class="col-auto">
-                    <label class="col-form-label">Rent:</label>
-                  </div>
-                  <div class="col-auto">
-                    <input type="text" id="rent-cost" class="form-control" />
-                  </div>
+                <div class="input-group mb-3">
+                  <label class="fs-4">Rent :</label>
+                  <input
+                    type="text"
+                    id="rent-cost"
+                    class="form-control ms-2"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                  />
                 </div>
 
-                <div class="row g-3 align-items-center justify-content-center">
-                  <div class="col-auto">
-                    <label class="col-form-label">Clothes:</label>
-                  </div>
-                  <div class="col-auto">
-                    <input type="text" id="clothes-cost" class="form-control" />
-                  </div>
+                <div class="input-group mb-3">
+                  <label class="fs-4">Clothes :</label>
+                  <input
+                    type="text"
+                    id="clothes-cost"
+                    class="form-control ms-2"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                  />
                 </div>
 
                 <button
                   type="button"
                   id="calculation"
-                  class="btn btn-primary mt-2"
+                  class="btn btn-primary mt-2 px-5 py-2"
                 >
                   Calculate
                 </button>
 
-                <h3>Total Expenses: <span id="total-expenses">00</span></h3>
+                <h3 class="mt-3">
+                  Total Expenses: <span id="total-expenses">00</span>
+                </h3>
 
-                <h4>Balance: <span id="balance">00</span></h4>
+                <h4 class="mt-3 mb-4">Balance: <span id="balance">00</span></h4>
 
-                <span
-                  >Save:
-                  <div class="col-auto">
-                    <input
-                      type="text"
-                      id="savings-input"
-                      class="form-control"
-                    />
-                  </div>
-                  %
+                <div class="input-group mb-3">
+                  <span class="fs-4">Save:</span>
+                  <input
+                    type="text"
+                    id="savings-input"
+                    class="form-control ms-2"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                  />
+                  <span class="ms-4 me-4">%</span>
+
                   <button
                     type="button"
                     id="savings-button"
-                    class="btn btn-primary mt-2"
+                    class="btn btn-primary py-2 px-5"
                   >
                     Save
                   </button>
-                </span>
+                </div>
 
                 <h4>Saving Amount: <span id="saving-amount">00</span></h4>
                 <h4>

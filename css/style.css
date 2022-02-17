@@ -1,0 +1,17 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+.notify {
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  background: #222436;
+  margin-top: 20px;
+  border-radius: 15px;
+  padding: 5px 20px;
+  display: none;
+}
+.notify-section {
+  width: 100%;
+  margin: 0 auto;
+}
