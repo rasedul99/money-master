@@ -22,16 +22,15 @@ document.getElementById("calculation").addEventListener("click", function () {
 document
   .getElementById("savings-button")
   .addEventListener("click", function () {
-    const savingsInput = getInputValue("savings-input");
+    const savingAmount = getInputValue("savings-input");
+    const income = getInputValue("income-input");
 
-    const balanceFieldText = document.getElementById("balance").innerText;
-    const balanceField = parseFloat(balanceFieldText);
+    const saving = (savingAmount / 100) * income;
+    const remainingBalance = income - saving;
 
-    const saving = (savingsInput / 100) * balanceField;
-
-    const savingAmount = document.getElementById("saving-amount");
-    const remainingBalance = balanceField - saving;
+    const savingAmountFiled = document.getElementById("saving-amount");
     const remainingBalanceField = document.getElementById("remaining-balance");
-    savingAmount.innerText = saving;
+
+    savingAmountFiled.innerText = saving;
     remainingBalanceField.innerText = remainingBalance;
   });
